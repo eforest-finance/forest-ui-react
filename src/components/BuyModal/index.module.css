@@ -1,0 +1,11 @@
+.buy-modal-custom {
+  @apply left-0 !top-0;
+  :global {
+    .ant-modal-body {
+      @apply mdTW:!pb-0;
+    }
+    .ant-modal-footer {
+      @apply mdTW:!py-[32px];
+    }
+  }
+}

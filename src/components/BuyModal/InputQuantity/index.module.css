@@ -1,0 +1,3 @@
+.available {
+  @apply leading-[20px] font-normal text-[var(--text-disable)] absolute right-0 top-[-28px];
+}

@@ -1,0 +1,39 @@
+.wrap {
+  @apply flex flex-col items-center justify-between;
+}
+
+.preview {
+  @apply rounded-lg !w-[128px] h-[128px] border border-solid border-lineBorder;
+}
+
+.info {
+  @apply flex items-center justify-center mb-1 mt-[16px];
+}
+
+.logo {
+  @apply !w-[24px] h-[24px] border border-solid border-lineBorder !rounded-[4px] mr-[4px];
+}
+
+.right {
+  @apply flex min-w-fit flex-col justify-center items-end;
+}
+
+.priceTitle {
+  @apply text-base font-medium text-textSecondary;
+}
+
+.price {
+  @apply text-xl font-semibold text-textPrimary;
+}
+
+.usdPrice {
+  @apply text-base font-medium text-textSecondary;
+}
+
+.flexWrap {
+  @apply flex items-center mr-[16px] overflow-hidden flex-1;
+}
+
+.imageWrap {
+  @apply w-[84px] h-[84px] mr-[16px] flex justify-center items-center overflow-hidden rounded-md border border-solid border-lineBorder;
+}

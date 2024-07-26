@@ -1,0 +1,13 @@
+.wrapper {
+  @apply w-full h-full flex flex-col relative;
+}
+.content {
+  @apply mt-[32px] bg-fillHoverBg rounded-lg p-[24px];
+}
+.title {
+  @apply text-lg text-textPrimary font-medium;
+}
+
+.contentCmp {
+  @apply text-base text-textSecondary mt-[16px];
+}

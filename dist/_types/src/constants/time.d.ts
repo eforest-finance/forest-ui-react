@@ -1,0 +1,17 @@
+export declare const TIME_FORMAT_12_HOUR = 12;
+export declare const TIME_FORMAT_24_HOUR = 24;
+export declare const MINUTES_PER_HOUR = 60;
+export declare const HALF_AN_HOUR = 30;
+export declare const SECOND_PER_MINUTES = 60;
+export declare const MILLI_PER_SECOND = 1000;
+export declare const WEEK_DAYS = 7;
+export declare const MILLISECONDS_PER_HALF_HOUR: number;
+export declare const SECOND_PER_ONE_HOUR: number;
+export declare const MILLISECONDS_PER_ONE_HOUR: number;
+export declare const MILLISECONDS_PER_DAY: number;
+export declare const MILLISECONDS_IN_WEEK: number;
+export declare const HALF_AN_MINUTES = 30;
+export declare const MONTH_DAYS = 30;
+export declare const YEAR_MONTHS = 12;
+export declare const SIX_MONTHS_DURATION = 6;
+export declare const MIN_MINUTES_DURATION = 15;

@@ -1,0 +1,11 @@
+.preview {
+  @apply font-medium text-textPrimary text-lg rounded-lg mb-4;
+}
+
+.infoItem {
+  @apply flex mb-2 justify-between text-textSecondary;
+}
+
+.infoItem_normal {
+  @apply text-base font-normal;
+}

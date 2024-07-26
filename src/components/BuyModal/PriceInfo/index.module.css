@@ -1,0 +1,26 @@
+.image {
+  @apply !rounded-[8px] mr-[16px] w-[84px] h-[84px] border border-solid border-lineBorder;
+}
+
+.collection-tokenName {
+  @apply text-[16px] mt-[8px] mdTW:mt-0 leading-[24px] font-medium text-[var(--text-secondary)];
+}
+
+.tokenName {
+  @apply mt-[4px] text-[20px] leading-[28px] font-semibold text-[var(--text-primary)];
+}
+
+.priceDesc {
+  @apply text-[16px] leading-[24px] font-medium text-[var(--text-secondary)];
+}
+
+.price {
+  @apply mt-[4px] text-[20px] leading-[28px] font-semibold text-[var(--text-primary)];
+}
+.usdPrice {
+  @apply text-[16px] leading-[24px] font-medium text-[var(--text-secondary)];
+}
+
+.quality {
+  @apply text-[16px] leading-[24px] font-medium text-[var(--text-secondary)] mt-[4px] mdTW:hidden;
+}
