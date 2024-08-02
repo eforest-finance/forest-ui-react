@@ -12,15 +12,12 @@ enum SupportedELFChainId {
 export default function useGetNftNumber({ nftSymbol, chainId }: { nftSymbol?: string; chainId?: Chain }): any {
   const [{ isLogin = true }, { dispatch }] = useForestStore();
   const walletInfo = Store.getInstance().getValue('walletInfo');
-  console.log('walletInfo:', walletInfo);
 
   const [nftNumber, setNftNumber] = useState<any>({});
 
   const getNFTNumber = async ({ nftSymbol, chainId }: { nftSymbol?: string; chainId?: Chain }) => {
     const currentChain = chainId || SupportedELFChainId.TDVW_NET;
     const owner = currentChain === SupportedELFChainId.MAIN_NET ? walletInfo.aelfChainAddress : walletInfo.address;
-
-    console.log(isLogin, owner);
 
     if (!(isLogin && owner)) return;
 
@@ -30,7 +27,6 @@ export default function useGetNftNumber({ nftSymbol, chainId }: { nftSymbol?: st
       chainId: currentChain,
     });
     setNftNumber(nftNumber);
-    console.log('nftNumber::', nftNumber);
   };
 
   useEffect(() => {

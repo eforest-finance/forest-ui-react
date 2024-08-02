@@ -5,6 +5,7 @@ import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import storages from 'storages';
 import { AUTHORISATION_FAILED } from './constant';
 import { IGNORE_ERROR_URLS } from './constant';
+import { Store } from '../provider/class/store';
 
 interface ResponseType<T> {
   code: string;
@@ -14,7 +15,7 @@ interface ResponseType<T> {
 
 class Request {
   instance: AxiosInstance;
-  baseConfig: AxiosRequestConfig = { baseURL: 'https://test.eforest.finance/api', timeout: 60000 };
+  baseConfig: AxiosRequestConfig = { timeout: 60000 };
 
   constructor(config: AxiosRequestConfig) {
     this.instance = axios.create(Object.assign({}, this.baseConfig, config));
@@ -106,6 +107,10 @@ class Request {
     );
   }
 
+  public resetBaseUrl(baseUrl: string) {
+    this.instance.defaults.baseURL = `${baseUrl}api`;
+  }
+
   public async request(config: AxiosRequestConfig): Promise<AxiosResponse> {
     return this.instance.request(config);
   }
@@ -127,15 +132,19 @@ class Request {
   }
 }
 
-const cmsRequest = new Request({ baseURL: 'https://test.eforest.finance/cms' });
+console.log(Store.getInstance().getStore());
+const curChain = 'tDVW';
+const baseUrl = '';
+// const { aelfInfo } = Store.getInstance().getStore();
+const cmsRequest = new Request({ baseURL: `${baseUrl}/cms` });
 const tokenRequest = new Request({
-  baseURL: 'https://test.eforest.finance/connect',
+  baseURL: `${baseUrl}/connect`,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
   },
 });
 
-const commonApiRequest = new Request({});
+const commonApiRequest = new Request({ baseURL: baseUrl });
 
 export default commonApiRequest;
 export { cmsRequest, tokenRequest };

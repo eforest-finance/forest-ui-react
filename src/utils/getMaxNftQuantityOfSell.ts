@@ -5,6 +5,8 @@ import moment from 'moment';
 import { ZERO, divDecimals } from './unit';
 import { GetListedNFTInfoList } from 'contract/market.ts';
 
+export const SECOND_PER_MINUTES = 60;
+
 const getMaxNftQuantityOfSell = async (chainId: Chain, nftInfo: INftInfo, address: string) => {
   try {
     if (!nftInfo?.nftSymbol || !address || !chainId) return false;
@@ -59,12 +61,16 @@ const getMaxNftQuantityOfSell = async (chainId: Chain, nftInfo: INftInfo, addres
       .toNumber();
 
     const maxQuantity = Math.max(quantity, 0);
+    console.log('balance:::', quantity, maxQuantity, validList);
+
     return {
       max: Math.floor(maxQuantity),
       listedNFTInfoList: validList,
       listItems: q.toNumber(),
     };
   } catch (error) {
+    console.log(error);
+
     return {
       max: 0,
       listedNFTInfoList: [],

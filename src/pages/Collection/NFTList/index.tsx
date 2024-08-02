@@ -46,7 +46,7 @@ export function ItemsCard({ dataSource, className, priceClassName, onClick }: It
   const price = dataSource?.price || dataSource?.listingPrice;
 
   return (
-    <Link href={`/detail?symbol=${dataSource?.nftSymbol}&from=all&source=telegram`}>
+    <Link href={`/detail?symbol=${dataSource?.nftSymbol}&from=all&source=telegram&callbackPath=collection`}>
       <Card
         className={`${styles['items-card-wrapper']} h-full ${className}`}
         onClick={onClick}
@@ -56,13 +56,9 @@ export function ItemsCard({ dataSource, className, priceClassName, onClick }: It
               <div className={styles['mark']}>{dataSource?.fileExtension?.toUpperCase()}</div>
             )}
             <div className={styles['item__wrapper']}>
-              <ImageEnhance
-                className=" !rounded-t-lg w-full aspect-square"
-                width={'100%'}
-                src={dataSource?.previewImage || ''}
-              />
+              <ImageEnhance className={styles['item__image']} width={'100%'} src={dataSource?.previewImage || ''} />
               {dataSource?.describe ? (
-                <div className="absolute top-3 right-3">
+                <div className={styles['item_honour']}>
                   <HonourLabel text={dataSource?.describe} />
                 </div>
               ) : null}

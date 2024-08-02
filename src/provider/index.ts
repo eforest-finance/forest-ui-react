@@ -1,4 +1,3 @@
-// export { default as Trade } from './Trade';
 import { useForestStore } from './ForestProvider';
 export { Store } from './class/store';
 

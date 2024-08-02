@@ -1,6 +1,7 @@
 export interface UseBuyProps {
     nftInfo: any;
+    onViewNft?: () => void;
 }
 export declare function useBuy(props: UseBuyProps): {
-    buyNow: () => void;
+    buyNow: (buyItem?: FormatListingType) => void;
 };

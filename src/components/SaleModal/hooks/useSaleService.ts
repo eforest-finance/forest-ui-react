@@ -48,7 +48,6 @@ export function getDefaultDataByNftInfoList(infoList?: IListedNFTInfo[], showPre
     .slice(0)
     .sort((item1, item2) => new BigNumber(item1.price.amount).comparedTo(new BigNumber(item2.price.amount)));
   const info = infoSortList[0];
-  console.log('getDefaultDataByNftInfoList', info);
 
   return {
     listingPrice: {
@@ -115,12 +114,18 @@ function useGetNftSaleInfo(id: string) {
   };
 }
 
-export function useSaleService(nftInfo: INftInfo, sellModalInstance: NiceModalHandler, mode: string, defaultData: any) {
+export function useSaleService(
+  nftInfo: INftInfo,
+  sellModalInstance: NiceModalHandler,
+  mode: string,
+  defaultData: any,
+  onViewNft?: () => void,
+) {
   const { walletInfo, aelfInfo } = Store.getInstance().getStore();
 
   const { nftSaleInfo } = useGetNftSaleInfo(nftInfo.id);
 
-  const { listItems, listedNFTInfoList, maxQuantity: availableItemForSell } = useGetListItemsForSale(nftInfo);
+  const { listItems, maxQuantity: availableItemForSell } = useGetListItemsForSale(nftInfo);
   const [listingBtnDisable, setListBtnDisable] = useState<boolean>(false);
   const [listingPrice, setListingPrice] = useState<IPrice>(defaultData?.listingPrice || {});
   const [duration, setDuration] = useState<IDurationData>(defaultData?.duration || {});
@@ -147,8 +152,9 @@ export function useSaleService(nftInfo: INftInfo, sellModalInstance: NiceModalHa
     editListingSuccessModal.hide();
     // saleListingModal.hide();
     sellModalInstance.hide();
+    onViewNft && onViewNft();
 
-    navigate.push(`/detail?symbol=${nftInfo?.nftSymbol}&from=all&source=telegram`);
+    // navigate.push(`/detail?symbol=${nftInfo?.nftSymbol}&from=all&source=telegram`);
   };
 
   const listWithFixedPrice = async (amount: number, status?: EditStatusType) => {
@@ -388,7 +394,6 @@ export function useSaleService(nftInfo: INftInfo, sellModalInstance: NiceModalHa
     }
     if (duration?.type === 'date') {
       const timeDifference = moment(duration.value).diff(moment());
-      console.log('duration test', duration.value);
       const minutesDifference = moment.duration(timeDifference).asMinutes();
       const months = Math.floor(moment.duration(timeDifference).asMonths());
       if (minutesDifference < 15) {
@@ -425,13 +430,13 @@ export function useSaleService(nftInfo: INftInfo, sellModalInstance: NiceModalHa
     }
   };
 
-  // useEffect(() => {
-  //   if (!Number(listingPrice.price) || !duration?.value || !Number(itemsForSell)) {
-  //     setListBtnDisable(true);
-  //     return;
-  //   }
-  //   setListBtnDisable(false);
-  // }, [duration, listingPrice, itemsForSell]);
+  useEffect(() => {
+    if (!Number(listingPrice.price) || !duration?.value || !Number(itemsForSell)) {
+      setListBtnDisable(true);
+      return;
+    }
+    setListBtnDisable(false);
+  }, [duration, listingPrice, itemsForSell]);
 
   const listingUSDPrice = useMemo(() => {
     if (!listingPrice?.price || !elfRate) return;

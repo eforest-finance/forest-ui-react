@@ -2,6 +2,7 @@ import { ITraitInfo } from 'types/index.ts';
 import BigNumber from 'bignumber.js';
 import { handlePlurality } from 'pages/Collection/util.ts';
 import { Store } from '../..';
+import { SupportedELFChainId } from 'constants/collection.ts';
 
 enum ENVIRONMENT {
   TEST = 'test',
@@ -25,6 +26,7 @@ const explorerUrls = {
 
 export const EXPLORE_URL = (chainId: string) => {
   const env = Store.getInstance().getValue('env');
+  console.log('env:', env);
 
   return {
     AELF: explorerUrls[env].AELF,
@@ -198,7 +200,8 @@ export function getExploreLink(
   chainName?: Chain,
 ): string {
   const target = (chainName && (chainName.toUpperCase() as 'AELF' | 'TDVV' | 'TDVW')) || SupportedELFChainId.MAIN_NET;
-  const prefix = EXPLORE_URL[target];
+  const prefix = EXPLORE_URL(target);
+
   switch (type) {
     case 'transaction': {
       return `${prefix}tx/${data}`;

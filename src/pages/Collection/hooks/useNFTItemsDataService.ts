@@ -51,7 +51,8 @@ const fetchNFTItemsData = async (
   params: Partial<CompositeNftInfosParams>,
   userWalletAddress?: string,
 ) => {
-  const res = await fetchCompositeNftInfos(params);
+  const searchParam = { ...params, generation: ['0', '9'] } as any as CompositeNftInfosParams;
+  const res = await fetchCompositeNftInfos(searchParam);
   try {
     const items = await fetchRankingDataOfNft(aelfInfo, res.items, userWalletAddress);
     res.items = items;

@@ -18,6 +18,7 @@ export declare const BuyMessage: {
 declare const _default: import("react").NamedExoticComponent<{
     nftInfo: any;
     elfRate: number;
+    onViewNft?: (() => void) | undefined;
     onClose?: (() => void) | undefined;
     buyItem?: FormatListingType | undefined;
 } & import("@ebay/nice-modal-react").NiceModalHocProps>;

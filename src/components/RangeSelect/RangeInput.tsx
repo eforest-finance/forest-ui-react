@@ -82,11 +82,7 @@ export default function RangeInput(props: RangeInputProps) {
           onChange={maxHandler}
         />
       </div>
-      {(minStatus || maxStatus) && (
-        <div className="text-[var(--message-error)] text-[16px] font-medium leading-[16px] pt-[4px]">
-          {errorMessage}
-        </div>
-      )}
+      {(minStatus || maxStatus) && <div className={styles['range-input__error']}>{errorMessage}</div>}
     </div>
   );
 }

@@ -28,3 +28,7 @@
     @apply mr-[8px];
   }
 }
+
+.range-input__error {
+  @apply mt-[20px] text-[var(--message-error)] text-[16px] font-medium leading-[16px] pt-[4px];
+}

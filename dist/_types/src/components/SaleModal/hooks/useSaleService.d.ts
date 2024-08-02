@@ -35,7 +35,7 @@ export declare function useGetListItemsForSale(nftInfo: INftInfo): {
     listItems: number;
     listedNFTInfoList: IListedNFTInfo[];
 };
-export declare function useSaleService(nftInfo: INftInfo, sellModalInstance: NiceModalHandler, mode: string, defaultData: any): {
+export declare function useSaleService(nftInfo: INftInfo, sellModalInstance: NiceModalHandler, mode: string, defaultData: any, onViewNft?: () => void): {
     nftSaleInfo: unknown;
     listingBtnDisable: boolean;
     listingPrice: IPrice;

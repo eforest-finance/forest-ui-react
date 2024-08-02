@@ -6,8 +6,6 @@ import { Store } from 'provider/class/store.ts';
 
 export const getBalance = async ({ owner, symbol }: IGetBalanceParams, chainId: Chain) => {
   try {
-    console.log('GetBalance----------');
-
     if (!owner || !symbol) return;
     const res = await GetBalance({ owner, symbol }, { chain: chainId });
     console.log('getBalance!!!!!!!:', res);
@@ -62,8 +60,6 @@ export const getNFTNumber = async ({
         getBalance({ owner, symbol: nftSymbol }, chainId),
         getTokenInfo({ symbol: nftSymbol }, chainId),
       ]);
-
-      console.log('nftSymbol res:', res);
 
       const nftDecimals = Number(res[2]?.decimals || 0);
       const nftQuantity = Math.floor(

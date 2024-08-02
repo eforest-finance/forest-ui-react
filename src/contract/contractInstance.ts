@@ -52,7 +52,6 @@ export default class WebLoginInstance {
 
   static set(instance: any) {
     WebLoginInstance.instance = instance;
-    console.log('instance:', WebLoginInstance.instance);
   }
 
   setWebLoginContext(context: WebLoginInterface) {
@@ -99,8 +98,6 @@ export default class WebLoginInstance {
     let contractMethod = null;
     const contract = WebLoginInstance.instance as any;
 
-    console.log('contract:', chain, WebLoginInstance.instance, params);
-
     switch (chain) {
       case SupportedELFChainId.MAIN_NET:
         contractMethod = contract.aelfSendMethod;
@@ -121,8 +118,6 @@ export default class WebLoginInstance {
   contractViewMethod<T, R>(chain: Chain, params: CallContractParams<T>): Promise<R> {
     let contractMethod = null;
     const contract = WebLoginInstance.instance as any;
-
-    console.log('contract:', chain, WebLoginInstance.instance, params);
 
     switch (chain) {
       case SupportedELFChainId.MAIN_NET:

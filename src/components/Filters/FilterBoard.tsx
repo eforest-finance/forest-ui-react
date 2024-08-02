@@ -47,10 +47,10 @@ const FilterBoardForPhone = ({
       <>
         <Divider className="!m-0 !mt-0 border-box" />
         <div className="flex items-center px-2 py-4">
-          <BaseButton size="ultra" className="flex-1 mx-2" onClick={clearAll}>
+          <BaseButton size="ultra" className={styles['btn_clear']} onClick={clearAll}>
             Clear All
           </BaseButton>
-          <BaseButton size="ultra" className="flex-1 mx-2" type="primary" onClick={doneChange}>
+          <BaseButton size="ultra" className={styles['btn_clear']} type="primary" onClick={doneChange}>
             Done
           </BaseButton>
         </div>

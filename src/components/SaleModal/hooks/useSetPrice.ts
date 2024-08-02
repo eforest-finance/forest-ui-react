@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 import { useUpdateEffect } from 'react-use';
 import { InputStatus } from 'antd/lib/_util/statusUtils';
 
-export const AMOUNT_LENGTH = 11;
+export const AMOUNT_LENGTH = 10;
 
 export interface ITokenOfPrice {
   symbol: string;

@@ -17,6 +17,7 @@ interface ISaleModalProps {
   defaultData: {
     [key: string]: any;
   };
+  onViewNft?: () => void;
 }
 
 export function SaleModalERC721Constructor({ nftInfo, type = 'add', defaultData }: ISaleModalProps) {
@@ -118,7 +119,7 @@ export function SaleModalERC721Constructor({ nftInfo, type = 'add', defaultData 
   );
 }
 
-export function SaleModalERC1155Constructor({ nftInfo, type = 'edit', defaultData }: ISaleModalProps) {
+export function SaleModalERC1155Constructor({ nftInfo, type = 'edit', defaultData, onViewNft }: ISaleModalProps) {
   const modal = useModal();
   useNiceModalCommonService(modal);
   const {
@@ -132,7 +133,7 @@ export function SaleModalERC1155Constructor({ nftInfo, type = 'edit', defaultDat
     itemsForSell,
     setItemsForSell,
     availableItemForSell,
-  } = useSaleService(nftInfo, modal, type, defaultData);
+  } = useSaleService(nftInfo, modal, type, defaultData, onViewNft);
 
   const footer = (
     <Button

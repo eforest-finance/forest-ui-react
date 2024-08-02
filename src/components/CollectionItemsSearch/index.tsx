@@ -93,7 +93,7 @@ export default function CollectionItemsSearch(params: ICollectionItemsSearch) {
         <div className="flex mb-[16px] base-select">
           <BaseSelect className="flex-1" dataSource={dropDownCollectionsMenu} {...selectProps} />
 
-          <div className={styles['size_container']}>
+          {/* <div className={styles['size_container']}>
             <div
               className={clsx(styles['btn-icon'], size === BoxSizeEnum.details && 'bg-fillHoverBg')}
               onClick={() => {
@@ -108,7 +108,7 @@ export default function CollectionItemsSearch(params: ICollectionItemsSearch) {
               }}>
               <SmallIcon className="w-[24px] h-[24px]" />
             </div>
-          </div>
+          </div> */}
         </div>
       )}
     </>

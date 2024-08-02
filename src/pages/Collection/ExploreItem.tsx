@@ -36,7 +36,7 @@ export default function ExploreItem({ nftCollectionId, ELFToDollarRate }: IExplo
   const [size, setSize] = useState<BoxSizeEnum>(listType);
   //   const { isLG } = useResponsive();
   const isLG = true;
-  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const [collapsed, setCollapsed] = useState<boolean>(true);
 
   const { filterList, filterSelect, traitsInfo, generationInfos, rarityInfos, onFilterChange, clearAll } =
     useFilterForItemService(nftCollectionId);

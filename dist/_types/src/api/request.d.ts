@@ -3,6 +3,7 @@ declare class Request {
     instance: AxiosInstance;
     baseConfig: AxiosRequestConfig;
     constructor(config: AxiosRequestConfig);
+    resetBaseUrl(baseUrl: string): void;
     request(config: AxiosRequestConfig): Promise<AxiosResponse>;
     get<T>(url: string, config?: AxiosRequestConfig): Promise<T>;
     post<T, R>(url: string, data?: T, config?: AxiosRequestConfig): Promise<R>;

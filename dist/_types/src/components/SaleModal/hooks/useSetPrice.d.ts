@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { InputStatus } from 'antd/lib/_util/statusUtils';
-export declare const AMOUNT_LENGTH = 11;
+export declare const AMOUNT_LENGTH = 10;
 export interface ITokenOfPrice {
     symbol: string;
     tokenId: string;

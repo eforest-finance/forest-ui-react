@@ -311,10 +311,10 @@ export const getFilterList = (
           value: CollectionsStatus['On Auction'],
           label: CollectionsStatus[3],
         },
-        {
-          value: CollectionsStatus['Has Offers'],
-          label: CollectionsStatus[4],
-        },
+        // {
+        //   value: CollectionsStatus['Has Offers'],
+        //   label: CollectionsStatus[4],
+        // },
       ],
     },
     {
@@ -346,13 +346,13 @@ export const getFilterList = (
       type: FilterType.SearchCheckbox,
       data: [],
     },
-    {
-      key: FilterKeyEnum.Generation,
-      title: FilterKeyEnum.Generation,
-      showClearAll: true,
-      type: FilterType.Checkbox,
-      data: [],
-    },
+    // {
+    //   key: FilterKeyEnum.Generation,
+    //   title: FilterKeyEnum.Generation,
+    //   showClearAll: true,
+    //   type: FilterType.Checkbox,
+    //   data: [],
+    // },
     {
       key: FilterKeyEnum.Rarity,
       title: FilterKeyEnum.Rarity,

@@ -9,7 +9,6 @@ import { ipfsURLToS3AndIpfsURL } from 'utils/unit.ts';
 export function ImageEnhance({ src = '', alt, onError, ...props }: ImageProps) {
   const [srcIndex, setSrcIndex] = useState<number>(0);
   const [{ aelfInfo = {} }] = useForestStore();
-  console.log('aelfInfo:', aelfInfo);
 
   const srcs = useMemo(
     () => ipfsURLToS3AndIpfsURL(src, aelfInfo.ipfsToS3ImageURL, aelfInfo.ipfsToSchrodingerURL),

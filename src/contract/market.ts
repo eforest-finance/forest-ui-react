@@ -30,7 +30,6 @@ const marketContractRequest = async <T, R>(
   options?: IContractOptions,
 ): Promise<R | ISendResult> => {
   const { aelfInfo } = Store.getInstance().getStore();
-  console.log('aelfInfo:', aelfInfo);
 
   const addressList = {
     main: aelfInfo?.marketMainAddress,

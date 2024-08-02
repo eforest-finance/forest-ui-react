@@ -6,17 +6,20 @@ import { useGetELFToDollarRate } from 'pages/Collection/hooks/useGetELFRateServi
 
 export interface UseBuyProps {
   nftInfo: any;
+  onViewNft?: () => void;
 }
 
 export function useBuy(props: UseBuyProps) {
-  const { nftInfo } = props;
+  const { nftInfo, onViewNft } = props;
   const buyNowModal = useModal(BuyNowModal);
   const { ELFToDollarRate } = useGetELFToDollarRate();
 
-  const handleBuyNow = () => {
+  const handleBuyNow = (buyItem?: FormatListingType) => {
     buyNowModal.show({
       elfRate: ELFToDollarRate,
       nftInfo,
+      onViewNft,
+      buyItem,
     });
   };
 

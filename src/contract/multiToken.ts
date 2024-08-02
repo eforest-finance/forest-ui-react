@@ -20,7 +20,6 @@ const multiTokenContractRequest = async <T, R>(
   options?: IContractOptions,
 ): Promise<R | ISendResult> => {
   const { aelfInfo } = Store.getInstance().getStore();
-  console.log('aelfInfo:', aelfInfo);
 
   const addressList = {
     main: aelfInfo?.mainChainAddress,
@@ -94,8 +93,6 @@ export const GetBalance = async (
   params: IGetBalanceParams,
   options?: IContractOptions,
 ): Promise<{ balance: number }> => {
-  console.log('GetBalance---------1');
-
   try {
     const res = (await multiTokenContractRequest('GetBalance', params, {
       ...options,

@@ -81,7 +81,6 @@ function CollectionSearchCheckBoxGroups({ dataSource = [], values = [], onChange
                 value={item.id}
                 checked={values.includes(item.id)}
                 onChange={(e) => {
-                  console.log('onChange', e.target.value, e.target.checked);
                   toggleSelect(e.target.value, e.target.checked);
                 }}>
                 <div className="flex gap-x-2 !w-[310px]">

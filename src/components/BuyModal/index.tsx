@@ -42,12 +42,22 @@ export const BuyMessage = {
   },
 };
 
-function BuyNowModal(options: { nftInfo: any; elfRate: number; onClose?: () => void; buyItem?: FormatListingType }) {
+function BuyNowModal(options: {
+  nftInfo: any;
+  elfRate: number;
+  onViewNft?: () => void;
+  onClose?: () => void;
+  buyItem?: FormatListingType;
+}) {
   const modal = useModal();
+  const { onClose, elfRate, buyItem, nftInfo, onViewNft } = options;
+
   const { getNftNumber, nftNumber } = useGetNftNumber({
-    nftSymbol: 'BBBBBBBBBBB-2',
-    chainId: 'tDVW',
+    nftSymbol: nftInfo.nftSymbol,
+    chainId: nftInfo.chainId,
   });
+
+  console.log('nftNumber:=====>', nftNumber);
 
   const navigate = useRouter();
 
@@ -55,7 +65,6 @@ function BuyNowModal(options: { nftInfo: any; elfRate: number; onClose?: () => v
 
   const { tokenBalance, nftTotalSupply } = nftNumber;
 
-  console.log('nftNumber:::', tokenBalance);
   const [{ isLogin = true }, { dispatch }] = useForestStore();
 
   const promptModal = useModal(PromptModal);
@@ -64,7 +73,6 @@ function BuyNowModal(options: { nftInfo: any; elfRate: number; onClose?: () => v
   const submitBtnText = 'Buy Now';
   const walletInfo = Store.getInstance().getValue('walletInfo');
 
-  const { onClose, elfRate, buyItem, nftInfo } = options;
   const [loading, setLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
   const [listings, setListings] = useState<FormatListingType[]>([]);
@@ -77,7 +85,6 @@ function BuyNowModal(options: { nftInfo: any; elfRate: number; onClose?: () => v
   //   const isPortkeyConnected = walletType === WalletType.portkey;
 
   const [quantityErrorTip, setQuantityErrorTip] = useState('');
-  console.log('id:', nftInfo?.id);
 
   const saleInfo = useGetSalesInfo(nftInfo?.id || '');
 
@@ -139,8 +146,6 @@ function BuyNowModal(options: { nftInfo: any; elfRate: number; onClose?: () => v
         buyListingData = buyListings;
       }
 
-      console.log('buyListingData', buyListingData);
-
       const batchBuyNowRes = await batchBuyNow({
         symbol: nftInfo?.nftSymbol || '',
         fixPriceList: buyListingData.map((list) => {
@@ -172,7 +177,8 @@ function BuyNowModal(options: { nftInfo: any; elfRate: number; onClose?: () => v
             buttonInfo: {
               btnText: 'View NFT',
               onConfirm: () => {
-                navigate.push(`/detail?symbol=${nftInfo?.nftSymbol}&from=all&source=telegram`);
+                // navigate.push(`/detail?symbol=${nftInfo?.nftSymbol}&from=all&source=telegram`);
+                onViewNft && onViewNft();
                 resultModal.hide();
               },
             },
@@ -250,7 +256,6 @@ function BuyNowModal(options: { nftInfo: any; elfRate: number; onClose?: () => v
       //   return;
       // }
       // modal.hide();
-      console.log(promptModal);
 
       promptModal.show({
         nftInfo: {
@@ -361,7 +366,6 @@ function BuyNowModal(options: { nftInfo: any; elfRate: number; onClose?: () => v
     try {
       if (!nftInfo) return;
       setLoading(true);
-      console.log('nftInfo:', nftInfo);
 
       const res = await getListings({
         page,

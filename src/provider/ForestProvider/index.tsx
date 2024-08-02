@@ -3,6 +3,7 @@ import { BasicActions } from './baseAction';
 import { ForestActions, ForestState } from './actions';
 import NiceModal from '@ebay/nice-modal-react';
 import { Store } from 'provider/class/store.ts';
+import request, { cmsRequest, tokenRequest } from '../../api/request.ts';
 
 const INITIAL_STATE = {
   chain: 'tDVW',
@@ -34,6 +35,9 @@ function reducer(state: ForestState, { type, payload }: any) {
     case ForestActions.setCurChain: {
       const chain = payload.chain;
       if (!chain) return state;
+
+      const baseUrl = chain === 'tDVW' ? 'https://test.eforest.finance/' : 'https://www.eforest.finance/';
+      request.resetBaseUrl(baseUrl);
 
       return Object.assign({}, state, { chain });
     }

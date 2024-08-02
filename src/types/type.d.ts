@@ -204,17 +204,17 @@ interface INftInfo {
 }
 
 type FormatListingType = {
-  price: number;
-  quantity: number;
-  expiration: string;
-  fromName: string;
-  ownerAddress: string;
-  whitelistHash: string | null;
-  purchaseToken: { symbol: string };
-  key: string;
-  decimals: number;
-  startTime: number;
-  endTime: number;
+  price?: number;
+  quantity?: number;
+  expiration?: string;
+  fromName?: string;
+  ownerAddress?: string;
+  whitelistHash?: string | null;
+  purchaseToken?: { symbol: string };
+  key?: string;
+  decimals?: number;
+  startTime?: number;
+  endTime?: number;
 };
 
 interface IFixPriceList {

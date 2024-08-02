@@ -116,3 +116,7 @@
 .collapsed-wrapper svg path {
   @apply fill-[var(--color-secondary)];
 }
+
+.btn_clear {
+  @apply flex-1 mx-2;
+}
