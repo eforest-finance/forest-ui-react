@@ -1,0 +1,55 @@
+.nft-list-card-text-ellipsis {
+  @apply w-full overflow-hidden whitespace-nowrap text-ellipsis;
+}
+
+.wrap {
+  @apply flex justify-between pb-[16px] overflow-hidden;
+}
+
+.image {
+  @apply !rounded-none !w-[84px] !h-[84px];
+}
+
+.right {
+  @apply flex min-w-fit flex-col justify-center items-end;
+}
+
+.priceTitle {
+  @apply text-base font-medium text-textSecondary;
+}
+
+.price {
+  @apply text-xl font-semibold text-textPrimary;
+}
+
+.usdPrice {
+  @apply text-base font-medium text-textSecondary;
+}
+
+.flexWrap {
+  @apply flex items-center mr-[16px] overflow-hidden flex-1;
+}
+
+.imageWrap {
+  @apply w-[84px] h-[84px] mr-[16px] flex justify-center items-center overflow-hidden rounded-md border border-solid border-lineBorder;
+}
+
+.collectionWrapper {
+  @apply flex flex-1 flex-col justify-between items-start overflow-hidden;
+}
+
+.nftWrapper {
+  @apply flex items-center justify-between mt-[4px] w-full;
+}
+
+.collectionName {
+  @apply text-base font-medium text-textSecondary;
+}
+
+.nftName {
+  @apply text-xl flex-1 font-semibold text-textPrimary;
+}
+
+.nftItem {
+  @apply text-base min-w-fit font-medium text-textSecondary text-right;
+}

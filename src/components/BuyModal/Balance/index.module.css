@@ -1,0 +1,3 @@
+.balance {
+  @apply flex justify-between  p-[24px] rounded-lg bg-[var(--fill-hover-bg)] text-[18px] leading-[26px] font-semibold text-[var(--text-primary)];
+}

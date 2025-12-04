@@ -1,0 +1,6 @@
+.btn_clear {
+  @apply flex-1 mx-2;
+}
+
+.btn_done {
+}
