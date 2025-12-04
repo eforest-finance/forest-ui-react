@@ -1,0 +1,17 @@
+import { ITraitInfo } from 'types/index.ts';
+import BigNumber from 'bignumber.js';
+export declare const EXPLORE_URL: (chainId: string) => any;
+export declare const thousandsNumber: (number?: string | number) => string;
+export declare const addPrefixSuffix: (info: any, str: string, ChainId?: string) => string;
+export declare function getParamsByTraitPairsDictionary(traitInfos: Array<Pick<ITraitInfo, 'key' | 'value'>>): any[][][];
+export declare const sleep: (time: number) => Promise<void>;
+export declare function ipfsURLToS3AndIpfsURL(url: string, s3ImagePrefixUri: string, ipfsToSchrodingerURL: string): string[];
+declare const formatInputNumber: (value: string, max: number) => string;
+export declare const ZERO: BigNumber;
+export declare function divDecimals(a?: BigNumber.Value, decimals?: string | number): BigNumber;
+export declare function timesDecimals(a?: BigNumber.Value, decimals?: string | number): BigNumber;
+export { formatInputNumber };
+declare const getExpiryTime: (timestamp: number) => string;
+export default getExpiryTime;
+export declare const isERC721: (nftInfo: INftInfo) => boolean;
+export declare function getExploreLink(data: string, type: 'transaction' | 'token' | 'address' | 'block', chainName?: Chain): string;

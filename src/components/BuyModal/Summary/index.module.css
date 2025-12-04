@@ -1,0 +1,14 @@
+.title {
+  @apply text-[18px] leading-[26px] font-medium text-[var(--text-primary)];
+}
+.estimated {
+  @apply text-[16px] leading-[24px] font-normal text-[var(--text-secondary)];
+}
+
+.price {
+  @apply text-[16px] leading-[24px] font-normal text-[var(--text-secondary)];
+}
+
+.usdPrice {
+  @apply text-[16px] leading-[24px] font-normal text-[var(--text-secondary)] mt-[8px];
+}

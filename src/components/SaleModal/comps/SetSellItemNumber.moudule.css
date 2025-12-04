@@ -1,0 +1,14 @@
+.err {
+  @apply mt-2 text-xs;
+}
+.textErr {
+  @apply text-error;
+}
+
+.quantity {
+  @apply font-medium text-textPrimary text-lg rounded-lg;
+}
+
+.available {
+  @apply text-textSecondary text-xs absolute right-0 top-[-28px];
+}

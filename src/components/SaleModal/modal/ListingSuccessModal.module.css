@@ -1,0 +1,42 @@
+.wrap {
+  @apply flex flex-col h-full;
+}
+.imageWrap {
+  @apply flex flex-col items-center justify-between;
+}
+
+.previewImage {
+  @apply w-[128px] h-[128px] rounded-md mb-4 object-contain border border-solid border-lineBorder;
+}
+
+.logoWrap {
+  @apply flex items-center justify-center mb-1;
+}
+
+.logo {
+  @apply !rounded-[4px] w-6 h-6 mr-1 object-contain border border-solid border-lineBorder;
+}
+
+.collectionName {
+  @apply text-textSecondary text-base;
+}
+
+.tokenName {
+  @apply font-semibold text-xl text-textPrimary;
+}
+
+.content {
+  @apply flex flex-1 flex-col items-center mt-12;
+}
+
+.content_title {
+  @apply text-textPrimary font-semibold text-2xl;
+}
+
+.content_text {
+  @apply text-base font-medium text-textSecondary mt-4;
+}
+
+.aelf_link {
+  @apply flex mb-4 justify-center items-center text-textSecondary;
+}

@@ -1,0 +1,15 @@
+.shortCut {
+  @apply bg-fillHoverBg h-[56px] mb-3 flex items-center justify-center mx-2 px-3 rounded-lg cursor-pointer;
+}
+
+.shortCut_title {
+  @apply flex-1 text-base font-semibold text-textPrimary;
+}
+
+.shortCut_price {
+  @apply text-base font-normal text-textSecondary ml-4;
+}
+
+.shortCut_unit {
+  @apply text-base font-normal text-textSecondary;
+}

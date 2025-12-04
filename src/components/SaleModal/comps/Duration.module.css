@@ -1,0 +1,7 @@
+.time {
+  @apply text-base text-textPrimary font-normal;
+}
+
+.timeBorder {
+  @apply flex h-[56px] !mx-0 mt-3 px-3 items-center justify-between rounded-lg border border-solid border-lineBorder;
+}

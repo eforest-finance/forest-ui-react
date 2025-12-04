@@ -1,0 +1,7 @@
+.title-wrapper {
+  @apply flex items-center font-medium	text-[18px] text-textPrimary;
+}
+
+.err {
+  @apply mt-[8px] text-functionalDanger mb-[40px] font-normal;
+}
